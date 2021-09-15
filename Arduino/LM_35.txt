@@ -1,0 +1,19 @@
+# define tempvalue 0
+void setup()
+{
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  int temp = analogRead(tempvalue);
+  float mv = (temp/1024.0)*5000;
+  float cel = mv/10;
+  float ferh = (cel*9)/5 + 32;
+  
+  //Serial.println("Temprature = ");
+  Serial.println(cel);
+  //Serial.println("*C");
+  //Serial.println();
+  delay(1000);
+}
